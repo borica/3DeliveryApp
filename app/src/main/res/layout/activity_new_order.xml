@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.NewOrderActivity"
+    android:background="#dbf1ff">
+
+    <RelativeLayout
+        android:id="@+id/logoWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3498db"
+        android:elevation="10dp">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="20dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/activityHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logoWrapper"
+        android:background="@drawable/roundedbackground"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="30dp"
+        android:elevation="8dp">
+
+        <ImageView
+            android:id="@+id/blueprintIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/blueprint"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Novo pedido"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedbackground"
+        android:layout_below="@+id/activityHeader"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="20dp"
+        android:elevation="8dp">
+
+        <EditText
+            android:id="@+id/orderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome do projeto"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="25dp"/>
+
+        <LinearLayout
+            android:id="@+id/dimensionsGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderName">
+
+            <EditText
+                android:id="@+id/orderWidth"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Largura"
+                android:layout_marginHorizontal="25dp"/>
+
+            <EditText
+                android:id="@+id/orderHeight"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Altura"
+                android:layout_marginHorizontal="25dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dimensionsGroup"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:text="solicitar pedido"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
