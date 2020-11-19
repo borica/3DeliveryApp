@@ -1,11 +1,15 @@
 package com.br.opet.app3delivery.model;
 
+import android.content.Context;
+
 public class Drawing {
 
     private int id;
     private String name;
     private double height;
     private double width;
+
+    private transient Context mContext;
 
     public int getId() {
         return id;
@@ -37,5 +41,13 @@ public class Drawing {
 
     public void setWidth(double width) {
         this.width = width;
+    }
+
+    public Context getmContext() {
+        return mContext;
+    }
+
+    public void setmContext(Context mContext) {
+        this.mContext = mContext;
     }
 }

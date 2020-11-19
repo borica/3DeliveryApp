@@ -14,7 +14,7 @@ public class UserModel {
 
     public Boolean save() {
         UserService userService = new UserService();
-        return userService.saveUser(this);
+        return userService.createNewUser(this);
     }
 
     public String getName() {

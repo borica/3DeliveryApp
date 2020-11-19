@@ -1,7 +1,6 @@
 package com.br.opet.app3delivery.service;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;

@@ -7,17 +7,17 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.br.opet.app3delivery.model.UserModel;
 import com.br.opet.app3delivery.service.defaultRequest.RequestSingleton;
 import com.br.opet.app3delivery.util.AppConstants;
 import com.google.gson.Gson;
 
-import java.io.UnsupportedEncodingException;
+import org.json.JSONObject;
 
 public class UserService {
 
-    public Boolean saveUser(final UserModel newUser) {
+    public Boolean createNewUser(final UserModel newUser) {
         try{
 
             RequestQueue requestQueue = RequestSingleton.getInstance(newUser.getmContext()).getRequestQueue();
@@ -25,11 +25,11 @@ public class UserService {
 
             final Boolean[] success = {false};
 
-            final String requestBody  = gson.toJson(newUser);
+            final JSONObject newUserRequest  = new JSONObject(gson.toJson(newUser));
 
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, AppConstants.getFullRoute(AppConstants.USER), new Response.Listener<String>() {
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, AppConstants.getFullRoute(AppConstants.USER), newUserRequest, new Response.Listener<JSONObject>() {
                 @Override
-                public void onResponse(String response) {
+                public void onResponse(JSONObject response) {
                     success[0] = true;
                     Toast.makeText(newUser.getmContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
                 }
@@ -42,18 +42,9 @@ public class UserService {
             }){
                 @Override
                 public String getBodyContentType() {return "application/json; charset=utf-8";}
-
-                @Override
-                public byte[] getBody() {
-                    try {
-                        return requestBody == null ? null : requestBody.getBytes("utf-8");
-                    } catch (UnsupportedEncodingException e){
-                        return null;
-                    }
-                }
             };
 
-            requestQueue.add(stringRequest);
+            requestQueue.add(jsonObjectRequest);
 
             return success[0];
         } catch (Exception e) {
