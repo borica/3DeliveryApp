@@ -7,6 +7,7 @@ public class AppConstants {
     public static final String SESSION = "session";
     public static final String USER = "users";
     public static final String DRAWING = "drawing";
+    public static final String CREATE_DRAWING = "drawing/create-drawing";
     public static final String PROVIDERS = "providers";
 
 
@@ -19,6 +20,8 @@ public class AppConstants {
                 return ROUTE_PATH + USER;
             case DRAWING:
                 return ROUTE_PATH + DRAWING;
+            case CREATE_DRAWING:
+                return ROUTE_PATH + CREATE_DRAWING;
             case PROVIDERS:
                 return ROUTE_PATH + PROVIDERS;
             default: break;

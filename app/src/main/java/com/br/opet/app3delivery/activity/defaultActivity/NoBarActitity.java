@@ -4,8 +4,6 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.br.opet.app3delivery.R;
-
 public class NoBarActitity extends AppCompatActivity {
 
     @Override

@@ -66,7 +66,7 @@ public class DashboardActivity extends NoBarActitity implements View.OnClickList
                 applicationContext.setLoggedUser(null);
                 startActivity(i);
                 finish();
-                break;
+            break;
             default: break;
         }
     }

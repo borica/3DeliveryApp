@@ -11,6 +11,16 @@ public class Drawing {
 
     private transient Context mContext;
 
+    public Drawing(){}
+
+    public Drawing(String name, double height, double width, Context mContext){
+        this.name = name;
+        this.width = width;
+        this.height = height;
+        this.height = height;
+        this.mContext = mContext;
+    }
+
     public int getId() {
         return id;
     }

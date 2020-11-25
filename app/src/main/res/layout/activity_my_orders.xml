@@ -22,4 +22,48 @@
             android:layout_marginVertical="20dp"/>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/activityHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logoWrapper"
+        android:background="@drawable/roundedbackground"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="30dp"
+        android:elevation="8dp">
+
+        <ImageView
+            android:id="@+id/blueprintIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/list"
+            android:alpha="0.6"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Meus pedidos"
+            android:textSize="16dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/orderWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedbackground"
+        android:layout_below="@+id/activityHeader"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="20dp"
+        android:elevation="8dp">
+
+            <ListView
+                android:id="@+id/orderListview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
 </RelativeLayout>

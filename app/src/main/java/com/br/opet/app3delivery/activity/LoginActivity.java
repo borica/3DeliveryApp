@@ -15,7 +15,7 @@ import com.br.opet.app3delivery.model.Session;
 import com.br.opet.app3delivery.service.listeners.SessionResponseListener;
 import com.br.opet.app3delivery.service.SessionService;
 
-public class LoginActivity extends NoBarActitity implements View.OnClickListener{
+public class LoginActivity extends NoBarActitity implements View.OnClickListener {
 
     private static final String TAG = LoginActivity.class.getName();
 
@@ -48,7 +48,7 @@ public class LoginActivity extends NoBarActitity implements View.OnClickListener
         //Next activity intent
         final Intent[] i = new Intent[1];
 
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.signup:
                 //Proceed to signup activity
                 i[0] = new Intent(this, SignUpActivity.class);
@@ -56,7 +56,7 @@ public class LoginActivity extends NoBarActitity implements View.OnClickListener
                 break;
             case R.id.loginbtn:
 
-                if(loginValid()) {
+                if (loginValid()) {
                     //Proceed to auth the user
                     Session newSession = new Session();
                     newSession.setmContext(this);
@@ -67,10 +67,13 @@ public class LoginActivity extends NoBarActitity implements View.OnClickListener
                     new SessionService().authenticate(newSession, new SessionResponseListener() {
                         @Override
                         public void onError(String message) {
-                            if(message.equals("401")) {
+                            if (message.equals("401")) {
+                                Toast.makeText(LoginActivity.this, "Usuário ou Senha incorretos!", Toast.LENGTH_LONG).show();
+                            } else {
                                 Toast.makeText(LoginActivity.this, message, Toast.LENGTH_LONG).show();
                             }
                         }
+
                         @Override
                         public void onResponse(Session responseSession) {
                             //Set logged user in the global application context
@@ -87,7 +90,8 @@ public class LoginActivity extends NoBarActitity implements View.OnClickListener
                 }
 
                 break;
-            default: break;
+            default:
+                break;
         }
 
     }
@@ -97,11 +101,11 @@ public class LoginActivity extends NoBarActitity implements View.OnClickListener
 
         boolean valid = true;
 
-        if(username.getText().toString().isEmpty()) {
+        if (username.getText().toString().isEmpty()) {
             username.setError("Usuário inválido");
             valid = false;
         }
-        if(password.getText().toString().isEmpty()) {
+        if (password.getText().toString().isEmpty()) {
             password.setError("Senha inválida");
             valid = false;
         }

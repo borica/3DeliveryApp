@@ -44,11 +44,13 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="Novo pedido"/>
+            android:text="Novo pedido"
+            android:textSize="16dp"/>
 
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/orderWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/roundedbackground"
@@ -91,15 +93,83 @@
 
         </LinearLayout>
 
-        <Button
-            android:layout_width="match_parent"
+        <TextView
+        android:id="@+id/pricePreview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dimensionsGroup"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="18dp"
+        android:text="Estimativa de preço: R$" />
+
+        <TextView
+            android:id="@+id/pricePreviewValue"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/dimensionsGroup"
-            android:layout_marginHorizontal="25dp"
-            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@+id/pricePreview"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="solicitar pedido"/>
+            android:textSize="18dp"
+            android:text="10"/>
+
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/providerWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderWrapper"
+        android:background="@drawable/roundedbackground"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="20dp"
+        android:elevation="8dp">
+
+        <TextView
+            android:id="@+id/providerWrapperLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Fornecedores"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="10dp"/>
+
+        <Spinner
+            android:id="@+id/providerSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/providerWrapperLabel"
+            android:autofillHints="@string/app_name"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="25dp" />
+
+        <TextView
+            android:id="@+id/providerDisclaimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/providerSpinner"
+            android:layout_marginHorizontal="25dp"
+            android:textSize="16dp"
+            android:layout_marginVertical="10dp"
+            android:text="Vantagens:"/>
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/newOrderBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/providerWrapper"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/roundedbluebackground"
+        android:textColor="#fff"
+        android:text="solicitar pedido" />
+
 
 </RelativeLayout>

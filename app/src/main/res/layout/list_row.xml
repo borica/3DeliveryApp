@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/intersect" />
+
+    <TextView
+        android:id="@+id/orderNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order name"
+        android:layout_toRightOf="@id/image"
+        android:layout_marginLeft="20dp"
+        android:textSize="18dp"
+        style="@style/TextAppearance.AppCompat.Title" />
+
+    <TextView
+        android:id="@+id/orderSizeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Size"
+        android:layout_toRightOf="@id/image"
+        android:layout_below="@+id/orderNameTxt"
+        android:layout_marginLeft="20dp"
+        android:textSize="18dp"
+         />
+
+    <ImageView
+        android:id="@+id/edit"
+        android:layout_toLeftOf="@id/delete"
+        android:layout_alignBottom="@id/image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="10dp"
+        app:srcCompat="@drawable/edit" />
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/delete" />
+
+</RelativeLayout>
