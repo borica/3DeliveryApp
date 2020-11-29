@@ -4,7 +4,7 @@ import android.content.Context;
 
 public class Drawing {
 
-    private int id;
+    private String id;
     private String name;
     private double height;
     private double width;
@@ -13,20 +13,13 @@ public class Drawing {
 
     public Drawing(){}
 
-    public Drawing(String name, double height, double width, Context mContext){
+    public Drawing(String id, String name, double height, double width, Context mContext){
+        this.id = id;
         this.name = name;
         this.width = width;
         this.height = height;
         this.height = height;
         this.mContext = mContext;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -59,5 +52,13 @@ public class Drawing {
 
     public void setmContext(Context mContext) {
         this.mContext = mContext;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

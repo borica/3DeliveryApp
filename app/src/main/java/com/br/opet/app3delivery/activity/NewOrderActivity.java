@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,8 +15,7 @@ import com.br.opet.app3delivery.R;
 import com.br.opet.app3delivery.activity.defaultActivity.NoBarActitity;
 import com.br.opet.app3delivery.model.Drawing;
 import com.br.opet.app3delivery.service.DrawingService;
-import com.br.opet.app3delivery.service.listeners.DrawingResponseListener;
-import com.br.opet.app3delivery.service.listeners.SessionResponseListener;
+import com.br.opet.app3delivery.service.listeners.StringResponseListener;
 
 public class NewOrderActivity extends NoBarActitity implements View.OnClickListener, View.OnFocusChangeListener, AdapterView.OnItemSelectedListener {
 
@@ -66,9 +64,9 @@ public class NewOrderActivity extends NoBarActitity implements View.OnClickListe
 
         if(valid()) {
 
-            Drawing newOrderDrawing = new Drawing(orderName.getText().toString(), Double.parseDouble(orderWidth.getText().toString()), Double.parseDouble(orderHeight.getText().toString()), this);
+            Drawing newOrderDrawing = new Drawing(null, orderName.getText().toString(), Double.parseDouble(orderWidth.getText().toString()), Double.parseDouble(orderHeight.getText().toString()), this);
 
-            new DrawingService().createNewDrawing(newOrderDrawing, new DrawingResponseListener() {
+            new DrawingService().createNewDrawing(newOrderDrawing, new StringResponseListener() {
                 @Override
                 public void onError(String message) {
                     Log.e(TAG,  "Erro ao salvar novo pedido:\n"+message);

@@ -1,6 +1,6 @@
 package com.br.opet.app3delivery.service.listeners;
 
-public interface DrawingResponseListener {
+public interface StringResponseListener {
 
     void onResponse();
 

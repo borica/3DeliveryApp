@@ -11,7 +11,7 @@ public class RequestSingleton {
     private RequestQueue mRequestQueue;
 
     private RequestSingleton(Context context) {
-        mRequestQueue = Volley.newRequestQueue(context.getApplicationContext());
+        mRequestQueue = Volley.newRequestQueue(context.getApplicationContext(), new CustomHurlStack());
     }
 
     public static synchronized RequestSingleton getInstance(Context context) {
@@ -25,5 +25,4 @@ public class RequestSingleton {
     public RequestQueue getRequestQueue() {
         return mRequestQueue;
     }
-
 }

@@ -50,6 +50,36 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/noItens"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedbackground"
+        android:layout_below="@+id/activityHeader"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="20dp"
+        android:elevation="8dp"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/noItemsImg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/empty"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noItemsImg"
+            android:text="Nenhum pedido para ser mostrado."
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="30dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/orderWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,12 +87,13 @@
         android:layout_below="@+id/activityHeader"
         android:layout_marginHorizontal="25dp"
         android:layout_marginTop="20dp"
-        android:elevation="8dp">
+        android:elevation="8dp"
+        android:visibility="invisible">
 
-            <ListView
-                android:id="@+id/orderListview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        <ListView
+            android:id="@+id/orderListview"
+            android:layout_width="wrap_content"
+            android:layout_height="390dp" />
 
     </RelativeLayout>
 
